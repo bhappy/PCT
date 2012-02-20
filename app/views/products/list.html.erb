@@ -1,0 +1,13 @@
+<% p = @product %>
+
+<li>
+  <img src="<%= p.xpath("a[@n=\"#{THUMBNAIL}\"]").attr('v').value %>">
+  
+  <h2><%= link_to p.xpath("a[@n=\"#{TITLE}\"]").attr('v').value, product_path(p.attr('u')) %></h2>
+  
+  <p><%= CURRENCY == ''? "Price:" : CURRENCY %> <%= p.xpath("a[@n=\"#{PRICE}\"]").attr('v').value %></p>
+  <p><%= @quantity %> x </p>
+</li>
+
+
+

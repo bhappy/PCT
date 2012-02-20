@@ -1,0 +1,50 @@
+<% p = @product
+	 url = p.attr('u').value
+   thumbnail = p.xpath("a[@n=\"#{THUMBNAIL}\"]").attr('v').value
+   text = "You may also like:" %>
+ 
+<div class="main_product">
+  
+  <img class="draggable" id="<%= url %>" src="<%= thumbnail %>">
+  
+  <aside>
+  	<h1><%= link_to p.xpath("a[@n=\"#{TITLE}\"]").attr('v').value, product_path(url) %></h1>
+	<p>Product Code: <%= p.xpath("a[@n=\"#{PRODUCT_ID}\"]").attr('v').value %></p>
+    <span class="rating-static rating-45"></span>
+	<p><%= CURRENCY == ''? "Price:" : CURRENCY %> <%= p.xpath("a[@n=\"#{PRICE}\"]").attr('v').value %></p>
+
+	<div class="share">
+		<b>Share:</b><br/>
+		<%= image_tag "icon-fb.jpg" %>
+		<%= image_tag "icon-twitter.jpg" %>
+		<%= link_to image_tag("heart.png"),  collections_add_path(:url=>url, :thumbnail=>thumbnail), :remote=>true %>
+	</div>
+	
+  </aside>
+  
+	<div class="clear"></div>
+	
+	<%= form_tag "/products/add?url=" + p.attr('u'), :id=>"addToCartForm"  do %>
+		<%= label_tag "quantity:"%>
+		<%= hidden_field_tag "url", p.attr('u') %>
+		<%= number_field_tag "quantity", 1, :min=>1 %>
+		<div class="button"><%= submit_tag "Add To Cart", :onclick=> 'addToCart();' %></div>
+	<% end %>
+  
+	<div class="clear"></div>
+
+	<% unless DESCRIPTION == '' %>
+		<div class="description">
+		<h2>Description:</h2>
+		<p><%= p.xpath("a[@n=\"#{DESCRIPTION}\"]").attr('v').value %></p>
+		</div>
+	<% end %>
+
+</div> <!-- end main_product -->
+
+<div class="clear"></div>
+
+<hr>
+<%= render 'recommendations', :text => text %>
+
+

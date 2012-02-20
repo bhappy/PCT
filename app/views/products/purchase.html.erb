@@ -1,0 +1,24 @@
+<% p = @product 
+   text = "Recommended for you:" %>
+
+<h1>Thank you for your purchase!</h1>
+
+<div id="shopping_cart"></div>
+
+	<div class="share">
+		<%= image_tag "icon-fb.jpg" %>
+		<%= image_tag "icon-twitter.jpg" %>
+	</div>
+	
+	<div class="offer">
+      <%= link_to "Continue Shopping", products_index_path %>
+	</div>
+
+<div class="clear"></div>
+
+<%= render 'recommendations', :text => text %>
+	
+<script>
+	showShoppingCart();
+	checkout();
+</script>

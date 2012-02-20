@@ -1,0 +1,36 @@
+<% p = @product 
+   text = "Recommended for you:" %>
+
+<h1>My Shopping Cart</h1>
+<div id="shopping_cart"></div>
+<div class="share">
+	<%= image_tag "icon-fb.jpg" %>
+	<%= image_tag "icon-twitter.jpg" %>
+</div>
+
+<div class="offer">
+  <div id="personal-offer"></div>
+  <%= link_to "Continue Shopping", products_index_path %>
+</div>
+
+<div class="button">
+  <%= link_to "Checkout", product_path(p.attr('u'), 'purchase') %>
+</div>
+
+<div class="clear"></div>
+<hr>
+
+
+<%= render 'recommendations', :text => text %>
+	
+<script src="/assets/gears_init.js"></script>
+<script src="/assets/geo.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script> 
+<script>
+	//alert('showShoppingCart("<%= BN_SERVER %>", "<%= CN %>", "<%= CC %>")');
+	showShoppingCart();
+	if (geo_position_js.init()) {
+		geocoder = new google.maps.Geocoder();
+		geo_position_js.getCurrentPosition(geo_success, geo_error);
+	}
+</script>

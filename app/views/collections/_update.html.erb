@@ -1,0 +1,6 @@
+ 
+    <% p = @product %>
+	  <div class="collectionContainer">
+			<%= link_to "x",  collections_remove_path(:url=>p.url), :method=>:delete, :class=>"remove", :remote=>true, :onclick => "$(this).parent().fadeOut('slow'); return false;" %>
+			<a href="<%= product_path(p.url) %>"><img src="<%= p.thumbnail %>" \></a>
+		</div>

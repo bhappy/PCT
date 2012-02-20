@@ -1,0 +1,412 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+
+/*******************************CSS Reset*****************************************/
+html, a, body, strong, h1, h2, h3, h4, h5, h6, p, ol, ul, li, pre, code, address, variable, form, fieldset, blockquote{
+	padding: 0;margin: 0;font-family:  Arial, Calibri,  Tahoma, Helvetica, sans-serif;font-size: 100%;font-weight: normal;color:#666;list-style-type:none;list-style:none;}
+
+ol{list-style: none;}
+ul{list-style: none;}
+a img{border: none;}
+
+.clear {clear: both;}
+.hidden {display: none;}
+
+a{
+	text-decoration: none;
+	color: 	#444444;
+	font-weight:bold;
+}
+
+input, select {
+    border: 2px solid #BBBBBB;
+    width: 15%;
+    float: left; 	
+    font-size: 14px;
+    -webkit-appearance: none;
+}
+label {
+		float: left;
+    margin: 0 10px 10px 25px;
+    padding: 3px;
+    font-size: 14px;
+    height: 16px;
+}
+
+hr{
+	margin: 30px 0;
+}
+
+/****************************Structural Elements***************************************/
+
+body {
+    font-family: Verdana,Arial,sans-serif;
+    font-size: medium;
+    /* line-height: 35px;*/
+    /*max-width: 600px;*/
+    min-width: 240px;
+    width: 100%;
+
+	
+	-webkit-user-select:none;
+    -webkit-text-size-adjust:none;
+/*	-webkit-box-sizing:border-box;*/
+	font-family:helvetica;
+/*	padding-bottom:45px;	/*	This prevents the scroller to lock if the user swipes down outside of the screen.
+							 	NOT needed if in home screen mode. */
+}
+
+#container{
+	width:1024px;
+	margin: auto auto;
+	background: url(' bg-baynote-apparel.jpg') 0 0 no-repeat;
+}
+
+#logo{
+	width: 100%;
+	height: 80px;
+	padding: 5px 0;
+}
+
+#logo h1{
+	font-size: xx-large;
+	color: #333333;
+	padding: 5px 0;
+	text-decoration: bold;
+}
+
+h1{
+	clear: both;
+	font-size: x-large;
+	font-weight:bold;
+	color: #666666;
+	padding: 5px 0;
+}
+
+h2{
+	font-size:large;
+	color: #666666;
+	padding: 3px 0;
+}
+
+header nav {
+    border-bottom: 1px solid #CCCCCC;
+    border-top: 1px solid #E1E1E1;
+    display: table;
+    height: 40px;
+    table-layout: auto;
+}
+header * {
+    font-family: arial;
+}
+nav {
+    clear: left;
+    width: 100%;
+}
+
+header nav a {
+    border-left: 1px solid #E0E0E0;
+    border-right: 1px solid #FFFFFF;
+    color: #333333;
+    display: table-cell;
+    font-size: medium;
+    height: 100%;
+    line-height: 24px;
+    overflow: hidden;
+    padding: 8px 0 0;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 2px #EEEEEE;
+}
+keywordSearchForm {
+    clear: both;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    width: 100%;
+}
+#search{
+	width: 80%;
+	height: 50px;
+	margin: 0 2px;
+}
+
+#search_button {
+	margin: 0 2px;
+    cursor: pointer;
+    border: 2px solid #dddddddd;
+    float: right;
+    width: 15%;
+    height: 50px;
+    background-color:#eeeeee;
+    border-radius: 5px;
+	font-size: x-large;
+}
+
+#shopping_cart{
+	width: 100%;
+	min-height: 200px;
+	clear: both;
+	padding: 10px 0;
+}
+
+.main{
+	margin: 20px 10px 0 250px;
+}
+.main_product{
+	width: 100%;
+	height: auto;
+}
+.main_product img{
+	width: 25%;
+	float: left;
+	margin: 10px;
+
+}
+.main_product aside{
+	width: 65%;
+	margin: 10px;
+	float:right;
+}
+.description{
+	width:100%;
+	padding: 0 0 10px 0;
+	border-bottom: 1px solid #eeeeee;
+}
+
+#addToCartForm{
+	float:right;	
+	clear: both;
+	width: 70%;
+}
+
+.button input, .button a{
+    background: #BC3217;
+    border: 1px solid #A50000;
+    color: #FFEDED;
+    display: block;
+    /*float: left;
+    font: bold 16px arial,sans-serif;*/
+    width: 30%;
+    height: 30px;
+    overflow: hidden;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #843232;
+    text-transform: uppercase;
+    border-radius: 10px;
+		float:right;
+}
+.share {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    float: left;
+    margin-bottom: 10px;
+    padding: 9px 0 9px;
+    width: 100%;
+}
+.share img {
+    border: 0 none;
+    float: left;
+    margin: 0 10px 0 0;
+    width: 25px;
+}
+
+/*----------Scroll------------*/
+
+#wrapper {
+	/*position:absolute; z-index:1;
+	top:500px;*/
+	margin: 10px 0;
+	overflow:hidden;
+	width:100%;
+	background:#ffffff;
+}
+
+#scroller {
+	width:100%;
+	height: 350px;
+	float:left;
+	padding:0;
+}
+
+#scroller ul {
+	list-style:none;
+	display:block;
+	float:left;
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	text-align:left;
+}
+
+#scroller li {
+	display:block;
+	vertical-align:middle;
+	float:left;
+	padding:0 10px;
+	width:170px;
+	height:100%;
+	border-left:1px solid #ccc;
+	border-right:1px solid #fff;
+	
+	font-size:medium;
+}
+
+#scroller img{
+	width:100%;
+}
+
+/* Rating */
+
+.rating-static {
+  width: 60px;
+  height: 16px;
+  display: block;
+  background: url('star-rating.png') 0 0 no-repeat;
+}
+
+.rating-50 { background-position: 0 0; }
+.rating-40 { background-position: -12px 0; }
+.rating-30 { background-position: -24px 0; }
+.rating-20 { background-position: -36px 0; }
+.rating-10 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }
+ 
+.rating-5  { background-position: -48px -16px; }
+.rating-15 { background-position: -36px -16px; }
+.rating-25 { background-position: -24px -16px; }
+.rating-35 { background-position: -12px -16px; }
+.rating-45 { background-position: 0 -16px; }
+
+
+
+
+
+
+
+/* grid */
+#grid .row{
+	clear: both;
+}
+
+#grid .product {
+	display:block;
+	vertical-align:middle;
+	float:left;
+	padding:10px 10px;
+	width:23%;
+	height:auto;
+	font-size:medium;
+	border: 1px solid #eee;
+	margin: 20px;
+}
+
+#grid .product img{
+	width:175px;
+}
+
+.offer{
+	margin: 10px 0;
+	font-size: large;
+	width: 40%;
+	float:left;
+}
+.offer a{
+    color: green;
+    font-size: normal;
+    text-decoration: underline;
+}
+
+#shopping_cart li:nth-child(odd) { background-color: #eee; }
+#shopping_cart li:nth-child(even) { background-color: #ddd; }
+#shopping_cart li {
+  padding: 10px;
+}
+#shopping_cart li img{
+	width: 20%;
+	float: left;
+}
+#shopping_cart li {
+  overflow: auto;
+  text-align: left;
+}
+#shopping_cart .empty {
+  color: red;
+}
+#shopping_cart h2{
+  width: 40%;
+  float:left;
+  font-size: large;
+  padding-left: 10px;
+}
+#shopping_cart p{
+  width: 12%;
+  float:right;
+  font-size: small;
+}
+
+/* sliding footer */
+
+#footerSlideContainer {
+		position: fixed;
+    bottom:0px;
+    width: 100%;
+}
+#footerSlideButton {
+    background: url('sliderButton.png') bottom left no-repeat transparent;
+    position: absolute;
+    top: -55px;
+		/*left: 15px;*/
+    right: 20px;
+    width:50px;
+    height:50px;
+    border: none;
+    cursor: pointer;
+}
+#footerSlideContent {
+    width: 100%;
+    height: 200px;
+    background: #fff;
+		color: #CCCCCC;
+    font-size: 0.8em;
+    border: 1px solid #ccc;
+    font-family: DejaVuSansBook, Sans-Serif;
+}
+#footerSlideText {
+    padding: 10px 25px 10px 25px;
+}
+
+
+#footerSlideContent a img{
+	width: 8%;  /* change a.remove margin-left */
+	margin: 15px 15px;
+	/*border: 5px solid #ffffff;*/
+}
+
+a.remove{
+  width: 5px;
+	position:absolute;
+  margin-left: 7.9%;
+}
+
+.collectionContainer{
+	display:inline;
+}
+
+.recommendations{
+	margin: 0px 10px;
+}
+
+.draggable.ui-draggable-dragging { 
+	/*border: 3px dashed #eee;*/
+	-moz-box-shadow: 0 0 .5em #333;
+	-webkit-box-shadow: 0 0 .5em #333;
+	z-index: 100;
+}
+

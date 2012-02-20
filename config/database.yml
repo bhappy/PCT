@@ -1,0 +1,6 @@
+development:
+    adapter: mysql
+    database: pct_dev
+    username: root
+    password: p0ss1ble
+    encoding: utf8

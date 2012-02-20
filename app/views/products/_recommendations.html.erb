@@ -1,0 +1,19 @@
+<div class="recommendations">
+	<h2><%= text %></h2>
+	<div id="wrapper">
+	  <div id="scroller">
+	  <ul>
+	    <% @results.each do |p| %>
+	    	<li>
+	    		<% url = p.attr('u') %>
+	      	<a href="<%= product_path(url) %>"><img id="<%= url %>" src="<%= p.xpath("a[@n=\"#{THUMBNAIL}\"]").attr('v').value %>" \></a>
+			  	<div class="clear"></div>
+			  	<%= link_to p.xpath("a[@n=\"#{TITLE}\"]").attr('v').value, product_path(p.attr('u')) %>
+			  	<p class="price"><%= p.xpath("a[@n=\"#{PRICE}\"]").attr('v').value %></p>
+	  			<span class="rating-static rating-<%= (6 + rand(5))*5 %>"></span>
+				</li>
+	    <% end %>
+	  </ul>
+	  </div>
+	</div>
+</div>

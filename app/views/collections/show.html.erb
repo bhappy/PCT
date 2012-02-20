@@ -1,0 +1,7 @@
+<div class="collection">
+	<% @products.each do |p| %>
+		<%= link_to "x",  collections_remove_path(:url=>p.url), :method=>:delete, :class=>"remove", :remote=>true %>
+		<a href="<%= product_path(p.url) %>"><img src="<%= p.thumbnail %>" \></a>
+	<% end %>  
+</div>
+
